@@ -1,1 +1,3 @@
-class MainMenu {}
+class MainMenu {
+
+}
