@@ -1,6 +1,6 @@
 // Variabler //
 
-int DisplayScreen = 0;
+int displayScreen = 0;
 
 // Setup //
 
@@ -11,22 +11,16 @@ void setup() {
 
 void draw() {
   // Her viser sketchen StartScreen(); hvis DisplayScreen er 0, som det altid er når programmet startes //
-  if (DisplayScreen == 0) {
+  if (displayScreen == 0) {
     startScreen();
-  } else if DisplayScreen == 1 {
+  } else if (displayScreen == 1) {
     chooseOrigin();
-  } else if DisplayScreen == 2 {
+  } else if (displayScreen == 2) {
     customizeGladiator();
-  } else if DisplayScreen == 3 {
-  } else if DisplayScreen == 4 {
-    placeholder();
-  } else if DisplayScreen == 5 {
-    placeholder();
-  } else if DisplayScreen == 6 {
+  }
+}
+void chooseOrigin() {
+}
 
-
-    void startScreen() {
-    }
-
-    void chooseOrigin() {
-    }
+void customizeGladiator() {
+}
