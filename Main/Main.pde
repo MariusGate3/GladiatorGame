@@ -10,6 +10,8 @@ void setup() {
 }
 
 void draw() {
+  println(displayScreen);
+
   // Her viser sketchen StartScreen(); hvis DisplayScreen er 0, som det altid er når programmet startes //
   if (displayScreen == 0) {
     startScreen();
@@ -19,8 +21,7 @@ void draw() {
     customizeGladiator();
   }
 }
-void chooseOrigin() {
-}
+
 
 void customizeGladiator() {
 }

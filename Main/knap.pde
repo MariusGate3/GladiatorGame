@@ -1,8 +1,8 @@
 class Knap {
   int knapX, knapY, knapB, knapH, knapFarve;
   String txt;
-  boolean mouseHover;
-  boolean buttonPressed;
+  boolean Pressed = false;
+  boolean Clicked = false;
 
 
 
@@ -15,47 +15,39 @@ class Knap {
     txt = txt_;
   }
 
-  // Farve til knapHover
-  boolean hover;
-  int knapHoverFarve = color(#00FFFF);
-  // color inverter lånt af :https://forum.processing.org/one/user/davbol.html
-  float R = red(knapFarve);
-  float G = green(knapFarve);
-  float B = blue(knapFarve);
-  float minRGB = min(R, min(G, B));
-  float maxRGB = max(R, max(G, B));
-  float minPlusMax = minRGB + maxRGB;
-  color complement = color(minPlusMax-R, minPlusMax-G, minPlusMax-B);
 
-///  void tegn() {
-///    if (buttonPressed)
-///      fill(knapFarve);
-///    else
-///      fill(knapHoverFarve);
- ///   if (isON(mouseX, mouseY)) {
- ///     stroke(0);
- ///     strokeWeight(2);
- ///   } else { 
- ///     noStroke();
-  ///  }
-///
- ///   rect(knapX, knapY, knapB, knapH, 10);
-  ///  fill(complement);
- ///   textSize(30);
- ///   text(txt, knapX+textWidth(txt), knapY+(knapH/2));
-///  }
+  // Tjekker om knappen bliver trykket
 
-
-///  boolean isON(int x, int y) {
- ///   return x > knapX && x < (knapX+knapB) && y > knapY && y < (y+knapH);
- ///   boolean knapKlikket() {
- ///     boolean changeState = isON(mouseX, mouseY);
- ///     if (changeState) {
- ///
- ///buttonPressed = !buttonPressed;
-  ///    }
-   ///   return changeState;
-  ///  }
+  void update() {
+    if (mousePressed == true && mouseButton == LEFT && Pressed == false) { 
+      Pressed = true; 
+      if (mouseX > knapX && mouseX < (knapX+knapB) && mouseY > knapY && mouseY < (knapY+knapH))
+      {
+        Clicked = true;
+      }
+    } else {
+      Clicked = false; 
+      Pressed = false;
+    }
   }
 
-  //     knapFarve = (color(red(knapFarve), green(knapFarve), blue(knapFarve), 0.1));
+  void tegn() {
+    // farver knappen når mussen er over den.
+    fill(3, 47, 54);
+    fill(98, 147, 155);
+
+    // Tegner knappen og teksten til knappen
+    rectMode(CENTER);
+    rect(knapX, knapY, knapB, knapH, 10);
+    fill(0, 0, 0);
+    textSize(30);
+    textAlign(CENTER, CENTER);
+    text(txt, knapX, knapY);
+  }
+
+  // Bruges til at tjekke om knappen er klikket.
+
+  boolean isClicked() {
+    return Clicked;
+  }
+}
