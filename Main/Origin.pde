@@ -29,12 +29,13 @@ class Origin {
   void tegn() {
     // farver knappen når mussen er over den.
     // Tegner knappen og teksten til knappen
-    stroke(30);
+    strokeWeight(40);
+    stroke(0);
     fill(17, 60, 81);
     rect(kasseX, kasseY, kasseB, kasseH);
     fill(71, 114, 134);
     textSize(30);
-    text(txt, kasseX+textWidth(txt), kasseY+(kasseH/2));
+    text(txt, kasseX, kasseY+(kasseH/2)-5);
   }
 
   // Bruges til at tjekke om knappen er klikket.

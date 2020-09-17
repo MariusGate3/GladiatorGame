@@ -5,6 +5,8 @@ Origin StreetGuy = new Origin("Street Guy", 1500, 540);
 
 void chooseOrigin() {
 background(39, 85, 108);
+
+// Funktioner for objekterne
 RoyalHeir.tegn();
 RoyalHeir.update();
 LoneDruid.tegn();
