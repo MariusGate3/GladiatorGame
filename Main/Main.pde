@@ -24,7 +24,7 @@ void draw() {
   }
 }
 
-void move() {
+void move() { 
   int changeX = 0;
   int changeY = 0;
   
