@@ -1,20 +1,20 @@
-  int farve = color(255, 255, 150);
- Knap startKnap = new Knap("Start", 960, height/2, 200, 100, farve);
+int farve = color(255, 255, 150);
+Knap startKnap = new Knap("Start", 960, 540, 200, 100, farve);
 
 
 void startScreen() {
 
-  background(255, 0, 0);
+  background(4, 32, 55);
   println("startScreen er initieret");
   smooth();
 
   startKnap.tegn();
   startKnap.update();
-  
-  if(startKnap.isClicked()){
+
+  if (startKnap.isClicked()) {
     clear();
-  displayScreen = 1;
+    displayScreen = 1;
   }
-  
+
   println(startKnap.isClicked());
 }
